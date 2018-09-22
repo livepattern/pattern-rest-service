@@ -1,14 +1,18 @@
 {
-  "name": "manan",
   "email": "manan@gmail.com",
-  "phone": "7788995536",
   "message": "Hello World!",
   "order": {
     "term": 12,
     "cart": [
       {
-        "id": 1,
-        "quantity": 2
+        "product": "Chair",
+        "quantity": 2,
+        "price": 60
+      },
+      {
+        "product": "Table",
+        "quantity": 1,
+        "price": 80
       }
     ]
   }
