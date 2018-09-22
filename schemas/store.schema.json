@@ -4,11 +4,6 @@
   "description": "A valid body for a POST request to /api/v1/store",
   "type": "object",
   "properties": {
-    "name": {
-      "type": "string",
-      "minLength": 5,
-      "maxLength": 100
-    },
     "email": {
       "type": "string",
       "minLength": 5,
@@ -19,33 +14,32 @@
       "minLength": 5,
       "maxLength": 2048
     },
-    "phone": {
-      "type": "string",
-      "minLength": 10,
-      "maxLength": 20
-    },
     "order": {
       "type": "object",
       "properties": {
         "term": {
           "type": "number",
           "exclusiveMinimum": 0,
-          "maximum": 36
+          "maximum": 48
         },
         "cart": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "id": {
-                "type": "number"
+              "product": {
+                "type": "string"
               },
               "quantity": {
                 "type": "number",
                 "exclusiveMinimum": 0
+              },
+              "price": {
+                "type": "number",
+                "exclusiveMinimum": 0
               }
             },
-            "required": ["id", "quantity"]
+            "required": ["product", "quantity", "price"]
           },
           "minItems": 1
         }
@@ -54,5 +48,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["name", "email", "message", "phone", "order"]
+  "required": ["email"]
 }
